@@ -1,0 +1,28 @@
+{
+  "name": "ceel-ui-workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "play:dev": "pnpm --filter play dev",
+    "docs:dev": "pnpm --filter @ceel-ui/docs dev",
+    "docs:build": "pnpm --filter @ceel-ui/docs build",
+    "library:build": "pnpm --filter ceel-ui build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.4.32"
+  },
+  "devDependencies": {
+    "@ceel-ui/components": "workspace:*",
+    "@ceel-ui/utils": "workspace:*",
+    "@types/node": "^20.14.11",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "ceel-ui": "workspace:*",
+    "sass": "^1.77.8",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.4"
+  }
+}

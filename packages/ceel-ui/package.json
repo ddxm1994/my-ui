@@ -1,0 +1,14 @@
+{
+  "name": "ceel-ui",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/ceel-ui.umd.js",
+  "module": "./index.ts",
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
