@@ -10,5 +10,8 @@
    "scripts": {
     "build": "vite build"
   },
-  "files": ["dist"]  
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  }
 }
