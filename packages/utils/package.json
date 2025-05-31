@@ -2,6 +2,7 @@
   "name": "@ceel-ui/utils",
   "version": "1.0.0",
   "description": "",
+  
   "main": "./index.ts",
   "private": false, 
   "keywords": [],
@@ -10,5 +11,9 @@
    "scripts": {
     "build": "vite build"
   },
-  "files": ["dist"]
+  "files": ["dist"],
+  "publishConfig": {
+  "access": "public",
+  "registry": "https://registry.npmjs.org/"
+}
 }
