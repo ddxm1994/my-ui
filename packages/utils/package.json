@@ -1,5 +1,8 @@
 {
   "name": "@ceel-ui/utils",
+  "publishConfig": {
+    "access": "public" 
+  },
   "version": "1.0.0",
   "description": "",
   "main": "./index.ts",
@@ -10,8 +13,5 @@
    "scripts": {
     "build": "vite build"
   },
-  "files": ["dist"],
-  "publishConfig": {
-    "access": "public"
-  }
+  "files": ["dist"]
 }
