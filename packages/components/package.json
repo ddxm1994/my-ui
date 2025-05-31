@@ -1,5 +1,5 @@
 {
-  "name": "@ceel-ui/components",
+  "name": "@dxm94/components",
   "version": "1.1.0",
   "description": "",
   "main": "dist/index.js",
@@ -10,6 +10,6 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@ceel-ui/utils": "^1.0.0"  
+    "@dxm94/utils": "^1.0.0"  
   }
 }

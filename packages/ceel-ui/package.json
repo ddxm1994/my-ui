@@ -9,7 +9,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@ceel-ui/components": "^1.0.0"
+    "@dxm94/components": "^1.0.0"
   },
   "keywords": [],
   "author": "",
