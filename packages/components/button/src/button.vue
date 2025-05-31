@@ -1,5 +1,5 @@
 <template>
-  <button>按钮</button>
+  <button>按钮123</button>
 </template>
 <script setup>
 defineOptions({
@@ -19,7 +19,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: green;
 }
 button:focus,
 button:focus-visible {

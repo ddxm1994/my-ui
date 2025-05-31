@@ -8,6 +8,9 @@
   "scripts": {
     "build": "vite build"
   },
+  "dependencies": {
+    "@ceel-ui/components": "^1.0.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"

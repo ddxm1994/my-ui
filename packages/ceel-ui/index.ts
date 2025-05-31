@@ -1,7 +1,6 @@
 import components from './component';
 
 const install = (app: any) => {
-    console.log(components);
     
     components.forEach(component => {
         app.use(component)
