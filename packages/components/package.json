@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "",
   "main": "dist/index.js",
+  "private":false,
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -11,5 +12,9 @@
   },
   "dependencies": {
     "@dxm94/utils": "^1.0.0"  
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
