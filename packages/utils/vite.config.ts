@@ -5,7 +5,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'index.ts'), // 入口文件
-      name: '@ceel-ui/utils', // 全局变量名（UMD 格式需）
+      name: '@dxm94/utils', // 全局变量名（UMD 格式需）
       fileName: (format) => `index.${format}.js` // 输出文件名
     },
     rollupOptions: {

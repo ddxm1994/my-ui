@@ -1,9 +1,10 @@
 <template>
-  <button>按钮使用</button>
+  <button>按钮group1</button>
+  <button>按钮group2</button>
 </template>
 <script setup>
 defineOptions({
-  name: 'cl-button',
+  name: 'cl-group-button',
 })
 </script>
 <style lang="scss" scoped>
