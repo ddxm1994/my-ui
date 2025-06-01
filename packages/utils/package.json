@@ -10,10 +10,5 @@
   "license": "ISC",
    "scripts": {
     "build": "vite build"
-  },
-  "files": ["dist"],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   }
 }
