@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import { ClButton } from 'ceel-ui'
+import { ClButton,ClGroupButton } from 'ceel-ui'
 </script>
 
 <template>
   <ClButton/>
+  <ClGroupButton/>
 </template>
 
 <style scoped>
