@@ -4,7 +4,7 @@
 </template>
 <script setup>
 defineOptions({
-  name: 'cl-button',
+  name: 'cl-group-button',
 })
 </script>
 <style lang="scss" scoped>
