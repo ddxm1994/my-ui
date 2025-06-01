@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "My CEEL-UI Project"
+  name: "My ceel-ui Project"
   # text: "A VitePress Site"
   tagline: 一个ui组件库
   actions:

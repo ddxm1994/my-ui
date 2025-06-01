@@ -2,9 +2,9 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from 'path';
 
-
 export default defineConfig({
   plugins: [vue()],
+
   build: {
     lib: {
       entry: "./index.ts",
@@ -13,8 +13,8 @@ export default defineConfig({
     },
     outDir: 'dist',
     rollupOptions: {
-      // 确保外部化依赖模块
-      external: [ "vue"], // 外部化 utils（避免间接依赖）],
+      // 只将 vue 作为外部依赖
+      external: ["vue"],
       output: {
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
         globals: {

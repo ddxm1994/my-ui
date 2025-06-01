@@ -2,13 +2,9 @@
   "name": "@ceel-ui/utils",
   "version": "1.0.0",
   "description": "",
-  
   "main": "./index.ts",
-  "private": false, 
+
   "keywords": [],
   "author": "",
-  "license": "ISC",
-   "scripts": {
-    "build": "vite build"
-  }
+  "license": "ISC"
 }

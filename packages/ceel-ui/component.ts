@@ -1,6 +1,5 @@
-import { ClButton , ClGroupButton } from "@ceel-ui/components";
+import { ClButton } from "@ceel-ui/components";
 
 export default [
-    ClButton,
-    ClGroupButton
+    ClButton
 ]

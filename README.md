@@ -19,7 +19,7 @@
 2. 组件库文档中要有组件的使用方式以及代码展示、效果展示。
     - docs 包中如何实现这些？
 3. play 包中该如何使用组件库中的组件呢？总不能写一点儿就打包发布一次吧！？
-    - pnpm 工作区的作用！package.json 中"@ceel-ui/utils": "workspace:*" 的作用是什么？
+    - pnpm 工作区的作用！package.json 中"@ceel-button/utils": "workspace:*" 的作用是什么？
 4. 开发组件的时候如何使用utils中的工具函数呢？
     - 参考 问题3
 ```
@@ -67,16 +67,16 @@
 }
 ```
 
-考虑一个问题：**"@ceel-ui/utils": "workspace:*" 的作用是什么？**
+考虑一个问题：**"@ceel-button/utils": "workspace:*" 的作用是什么？**
 
 千问回答如下：
 >
->在 package.json 文件中，当你看到 "@ceel-ui/utils": "workspace:*" 这样的依赖项，这是在使用 pnpm 或其他一些支持 workspace 的包管理器（如 Yarn）时的一种特殊依赖引用方式。
+>在 package.json 文件中，当你看到 "@ceel-button/utils": "workspace:*" 这样的依赖项，这是在使用 pnpm 或其他一些支持 workspace 的包管理器（如 Yarn）时的一种特殊依赖引用方式。
 >
 >"workspace:*" 的作用是告诉包管理器从当前 monorepo（多仓库）项目的 workspace 中引用该依赖，而不是从外部下载一个独立的版本。具体来说：
 >
 > "workspace:*" 指代的是当前 monorepo 项目中定义的 workspace 下的任意版本。
-> 这意味着，如果你的项目结构中有一个名为 @ceel-ui/utils 的子项目，那么这个依赖将直接从你的项目目录中引用该子项目，而不是去 NPM 或其他远程仓库下载。
+> 这意味着，如果你的项目结构中有一个名为 @ceel-button/utils 的子项目，那么这个依赖将直接从你的项目目录中引用该子项目，而不是去 NPM 或其他远程仓库下载。
 >这种方式的好处包括：
 >1. 版本同步:
 >  ○ 所有使用 "workspace:*" 引用的项目都会引用 monorepo 中的同一个子项目，这保证了版本的一致性。
@@ -85,7 +85,7 @@
 >3. 便于开发和测试:
   ○ 你可以在 monorepo 的子项目中进行修改，而无需重新发布到 NPM，就能立即在其他子项目中看到效果，非常适合开发和测试阶段。
 >4. 节省磁盘空间:
->  ○ 当你需要更新 @ceel-ui/utils 的功能或修复 bug 时，只需要在一个地方修改即可，所有依赖它的子项目会自动获取更新。
+>  ○ 当你需要更新 @ceel-button/utils 的功能或修复 bug 时，只需要在一个地方修改即可，所有依赖它的子项目会自动获取更新。
 
 
 带着答案往下走
@@ -97,32 +97,32 @@ play 启动后就可以看到一个常见的vite+vue项目。
 **如果此时你已经新建了一个button组件。那么该如何在这个play中展示呢？**
 
 答案很简单，
-> 1. 在主项目的package.json 中添加软链（本地依赖） "ceel-ui": "workspace:*"
+> 1. 在主项目的package.json 中添加软链（本地依赖） "ceel-button": "workspace:*"
 > 2. 在play项目中就可以通过import引入后通过 app.use(ceelUi) 使用。
 
 根目录下的 `package.josn` 如下
 ```json
 {
-  "name": "ceel-ui-workspace",
+  "name": "ceel-button-workspace",
   "dependencies": {
     "vue": "^3.4.32"
   },
   ...
   "devDependencies": {
     ...
-    "ceel-ui": "workspace:*",  // 添加这个
+    "ceel-button": "workspace:*",  // 添加这个
     ...
   }
 }
 ```
-**特别注意，ceel-ui不是根目录，而是 ceel-ui/packages/components/ceel-ui**
+**特别注意，ceel-button不是根目录，而是 ceel-button/packages/components/ceel-button**
 
-**ceel-ui 作为组件库的入口，那么它应该具备以下功能：**
+**ceel-button 作为组件库的入口，那么它应该具备以下功能：**
 - 默认导出一个含有install方法的对象，以供vue的use函数去调用（app.use(ceelUi)）。
 - 在其install方法中应该循环注册所有的组件。
 - 如果要支持按需引入，那么应该导出各个组件。
 
-`ceel-ui/index.ts `内容如下：
+`ceel-button/index.ts `内容如下：
 ```
 // 导入所有的组件
 import components from './component' //该文件应该整合所有的组件到一个 list 中，然后导出。
@@ -133,10 +133,10 @@ const install = (app) => {
 
 export default { install }
 
-// 如果要支持按需引入那么应该, 这里 @ceel-ui/components 模块应该导出各个组件。
-export * from '@ceel-ui/components' 
+// 如果要支持按需引入那么应该, 这里 @ceel-button/components 模块应该导出各个组件。
+export * from '@ceel-button/components' 
 ```
-到这儿你应该已经明白了大半儿，接下来你应该想到的不是去写组件，而是考虑为什么 `from '@ceel-ui/components'` 能导入组件，`npm`是怎么找到的我想要导出的东西呢？
+到这儿你应该已经明白了大半儿，接下来你应该想到的不是去写组件，而是考虑为什么 `from '@ceel-button/components'` 能导入组件，`npm`是怎么找到的我想要导出的东西呢？
 
 > 提到 npm 你应该立马想到 package.json 因为npm的一些信息都在package.json中存放。
 
@@ -146,7 +146,7 @@ export * from '@ceel-ui/components'
 文件`components/package.json`
 ```
 {
-  "name": "@ceel-ui/components",
+  "name": "@ceel-button/components",
   "version": "1.0.0",
   "description": "",
   "main": "index.js", // 该包的入口地址 也就是 components/index.js
