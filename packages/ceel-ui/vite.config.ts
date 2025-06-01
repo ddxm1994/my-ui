@@ -28,8 +28,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@ceel-button/components': resolve(__dirname, '../components'),
-      '@ceel-button/utils': resolve(__dirname, '../utils')
+      '@ceel-ui/components': resolve(__dirname, '../components'),
+      '@ceel-ui/utils': resolve(__dirname, '../utils')
     }
   }
 });
