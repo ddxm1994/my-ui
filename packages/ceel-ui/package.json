@@ -1,10 +1,14 @@
 {
   "name": "ceel-ui",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "A Vue 3 UI component library",
   "type": "module",
   "main": "./dist/ceel-ui.umd.js",
-  "module": "./index.ts",
+  "module": "./dist/ceel-ui.es.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "vite build"
   },

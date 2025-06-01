@@ -3,10 +3,9 @@ import components from './component';
 const install = (app: any) => {
     
     components.forEach(component => {
+      console.log('component',component)
         app.use(component)
     })
-    console.log(app);
-    
 };
 
 export default { install, ...components };
