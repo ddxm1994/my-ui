@@ -1,6 +1,6 @@
 {
   "name": "ceel-ui",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A Vue 3 UI component library",
   "type": "module",
   "main": "./dist/ceel-ui.umd.js",
