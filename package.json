@@ -7,7 +7,10 @@
     "play:dev": "pnpm --filter play dev",
     "docs:dev": "pnpm --filter @ceel-ui/docs dev",
     "docs:build": "pnpm --filter @ceel-ui/docs build",
-    "library:build": "pnpm --filter ceel-ui build"
+    "library:build": "pnpm --filter ceel-ui build",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +21,7 @@
   "devDependencies": {
     "@ceel-ui/components": "workspace:*",
     "@ceel-ui/utils": "workspace:*",
+    "@changesets/cli": "^2.29.4",
     "@types/node": "^20.14.11",
     "@vitejs/plugin-vue": "^5.0.5",
     "ceel-ui": "workspace:*",
