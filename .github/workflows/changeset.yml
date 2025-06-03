@@ -10,6 +10,10 @@ on:
 jobs:
   changesets:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v3
         with:
@@ -17,9 +21,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+          registry-url: 'https://registry.npmjs.org'
       - uses: pnpm/action-setup@v2
         with:
           version: 8
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - run: pnpm install
       - uses: changesets/action@v1
         with:
